@@ -1,0 +1,471 @@
+<!-- ========================================== -->
+<!-- 1. index.html                              -->
+<!-- ========================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dāwat — Royal Indian Fine Dining & Live Tandoor</title>
+  <meta name="theme-color" content="#0c0a09" />
+  <meta name="description" content="Experience regal Indian culinary heritage, open tandoor kitchen, handcrafted spices, and instant WhatsApp table reservations at Dāwat." />
+  
+  <!-- Google Fonts: Cormorant Garamond (Serif) & Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Transparent Dynamic Navigation Bar -->
+  <header id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="brand-title">Dāwat</span>
+        <span class="brand-sub">Fine Dining</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#heritage">Heritage</a>
+        <a href="#reservation">Reserve Table</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#kitchen">Live Kitchen</a>
+        <a href="#menu">Royal Menu</a>
+        <a href="#trust">Purity & Trust</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="btnOpenDirections" class="btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Get Directions</span>
+        </button>
+
+        <button id="btnOpenBooking" class="btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.22-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm.05 16.5c-1.5 0-2.91-.42-4.13-1.15l-.3-.18-3.08.77.82-2.97-.2-.31A7.95 7.95 0 0 1 4.05 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8.5-8 8.5z"/></svg>
+          <span>Book Table</span>
+        </button>
+
+        <button id="btnMobileToggle" class="mobile-toggle" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="mobile-menu hidden">
+      <a href="#heritage">Heritage</a>
+      <a href="#reservation">Reserve Table</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#kitchen">Live Kitchen</a>
+      <a href="#menu">Royal Menu</a>
+      <a href="#trust">Purity & Trust</a>
+      <div class="mobile-actions">
+        <button id="btnMobileDirections" class="btn-ghost w-100">Get Directions</button>
+        <a href="tel:6294601364" class="btn-outline w-100">Call +91 6294601364</a>
+        <button id="btnMobileBooking" class="btn-gold w-100">Book on WhatsApp (6294601364)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Opening Zoom Animation -->
+  <section class="hero-section">
+    <div class="hero-bg" id="heroBg">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80" alt="Dāwat Grand Dining Hall" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-kicker">
+        <span class="line"></span>
+        <span class="text">Royal Awadhi & Mughlai Culinary Heritage</span>
+        <span class="line"></span>
+      </div>
+
+      <h1 class="hero-title">Regal Flavors, Slow-Cooked Over Live Embers</h1>
+      <p class="hero-description">
+        From 24-hour slow simmered Dal Dāwat to earthen-pot Dum Biryanis and live 800°F clay tandoor grills. Handcrafted with stone-ground heirloom spices.
+      </p>
+
+      <div class="hero-trust-bar">
+        <span>⭐ <strong>4.9/5 Rating</strong> (1,450+ Diners)</span>
+        <span class="bullet">·</span>
+        <span>100% In-House Stone Ground Spices</span>
+        <span class="bullet">·</span>
+        <span>FSSAI 5-Star Certified Kitchen</span>
+      </div>
+
+      <div class="hero-ctas">
+        <button class="btn-gold btn-lg" onclick="openBookingModal()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.22-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm.05 16.5c-1.5 0-2.91-.42-4.13-1.15l-.3-.18-3.08.77.82-2.97-.2-.31A7.95 7.95 0 0 1 4.05 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8.5-8 8.5z"/></svg>
+          <span>Book via WhatsApp (6294601364)</span>
+        </button>
+
+        <a href="#menu" class="btn-dark btn-lg">Explore Royal Menu</a>
+        <button class="btn-outline btn-lg" onclick="openDirectionsModal()">Get Directions</button>
+      </div>
+
+      <div class="hero-meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">Daily Service</div>
+          <div class="meta-value">Open Daily: 12:00 PM – 12:00 AM</div>
+          <div class="meta-sub">Last seating 11:00 PM</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Location & Parking</div>
+          <div class="meta-value">Heritage Square, Connaught Enclave</div>
+          <div class="meta-sub gold-text">Complimentary Valet Parking</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Instant Reservations</div>
+          <div class="meta-value">WhatsApp: 6294601364</div>
+          <div class="meta-sub emerald-text">Replies in &lt; 2 minutes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purity, Hygiene & Trust Strip -->
+  <section id="trust" class="trust-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-label">The Sacred Purity Promise</span>
+        <h2 class="section-title">Built on Authenticity, Uncompromising Hygiene & Trust</h2>
+        <p class="section-intro">Every dish honors centuries of culinary tradition with modern laboratory-grade kitchen hygiene and pure natural ingredients.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon">✨</div>
+          <h3>100% Stone-Ground Spices</h3>
+          <p class="trust-sub">Zero Pre-Packaged Pastes</p>
+          <p class="trust-desc">Coriander from Rajasthan, saffron from Pampore, and black cardamom ground in small batches every morning.</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">🔥</div>
+          <h3>800°F Clay Tandoor Hearth</h3>
+          <p class="trust-sub">Live Flame & Wood Ember</p>
+          <p class="trust-desc">Handcrafted clay ovens fired with seasoned natural charcoal for tender smokiness and gentle char.</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">🌱</div>
+          <h3>Dedicated Separation of Prep</h3>
+          <p class="trust-sub">Pure Veg & Jain Dedicated Stations</p>
+          <p class="trust-desc">Dedicated cookware, preparation counters, and dedicated tandoor sections for vegetarian and Jain guests.</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">🛡️</div>
+          <h3>FSSAI 5-Star Hygiene Rated</h3>
+          <p class="trust-sub">Transparent Open Kitchen</p>
+          <p class="trust-desc">Watch breads stretched and kebabs grilled in real-time through our glass dining theater. License #10021011000492.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Table Reservation Section -->
+  <section id="reservation" class="reservation-section">
+    <div class="container">
+      <div class="reservation-box">
+        <div class="reservation-content">
+          <div class="res-header">
+            <span class="sub-label">Real-Time Table Booking</span>
+            <h2 class="section-title">Reserve Your Imperial Table</h2>
+            <p class="section-intro">Instant on-screen confirmation voucher with seamless WhatsApp dispatch to <strong>6294601364</strong>.</p>
+          </div>
+
+          <!-- Reservation Form -->
+          <form id="reservationForm" class="res-form" onsubmit="handleReservationSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="resName" required placeholder="e.g. Aarav Sharma" />
+              </div>
+              <div class="form-group">
+                <label>WhatsApp Number *</label>
+                <input type="tel" id="resPhone" required placeholder="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date *</label>
+                <input type="date" id="resDate" required />
+              </div>
+              <div class="form-group">
+                <label>Party Size *</label>
+                <select id="resGuests">
+                  <option value="1 Guest">1 Guest (Solo Dining)</option>
+                  <option value="2 Guests" selected>2 Guests (Couple / Pair)</option>
+                  <option value="4 Guests">4 Guests (Family / Friends)</option>
+                  <option value="6 Guests">6 Guests (Party)</option>
+                  <option value="8 Guests">8 Guests (Large Celebration)</option>
+                  <option value="12+ Guests">12+ Guests (Royal Banquet)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Time Slot *</label>
+                <select id="resTimeSlot"></select>
+                <div class="urgency-tag" id="urgencyTag">⚡ Peak dinner slot selected · High demand today</div>
+              </div>
+
+              <div class="form-group">
+                <label>Seating Ambience *</label>
+                <select id="resSeating">
+                  <option value="Grand Dining Hall">Grand Dining Hall (Orb Chandeliers)</option>
+                  <option value="Chef's Live Tandoor Counter">Chef's Live Tandoor Hearth Counter</option>
+                  <option value="Candlelit Velvet Booth">Candlelit Private Velvet Booth</option>
+                  <option value="Regal Open Courtyard">Regal Open Courtyard</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Dietary & Special Occasion Notes</label>
+              <input type="text" id="resNotes" placeholder="e.g. Jain preparation, anniversary celebration, mild spice" />
+            </div>
+
+            <button type="submit" class="btn-gold btn-xl w-100">
+              <span>Confirm Royal Reservation & Send to WhatsApp (6294601364)</span>
+            </button>
+          </form>
+
+          <!-- On-screen Voucher (Hidden by default) -->
+          <div id="voucherContainer" class="voucher-box hidden">
+            <div class="voucher-badge">✓ Confirmed & Dispatched</div>
+            <h3 class="voucher-title">Table Reservation Voucher</h3>
+            <p class="voucher-ref">Booking Ref ID: <strong id="vRefId" class="gold-text">#DWT-7892</strong></p>
+
+            <div class="voucher-details">
+              <div class="v-row"><span>Guest:</span> <strong id="vGuest">-</strong></div>
+              <div class="v-row"><span>Party Size:</span> <strong id="vParty">-</strong></div>
+              <div class="v-row"><span>Date & Slot:</span> <strong id="vSlot">-</strong></div>
+              <div class="v-row"><span>Seating:</span> <strong id="vSeating">-</strong></div>
+            </div>
+
+            <div class="voucher-actions">
+              <button class="btn-emerald w-100" id="btnReopenWhatsApp">
+                Open in WhatsApp (+91 6294601364)
+              </button>
+              <button class="btn-dark w-100" onclick="resetReservationForm()">
+                Book Another Table
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Narrative 'Our Story' Section -->
+  <section id="heritage" class="story-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-label">Chronicles of Taste</span>
+        <h2 class="section-title">Our Story & Generational Lineage</h2>
+      </div>
+
+      <div class="story-chapter">
+        <div class="story-text">
+          <span class="chapter-num">Chapter 01</span>
+          <h3>Ancestral Roots & The Khari Baoli Legacy</h3>
+          <p>Founded on recipes passed down through three generations of master royal chefs, Dāwat preserves the endangered art of slow cooking. We reject commercial spice packets; our saffron originates in Kashmir's Pampore valley, and whole spices are crushed daily using heavy stone mortars.</p>
+        </div>
+        <div class="story-media">
+          <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1000&q=80" alt="Heirloom Indian Spices" />
+        </div>
+      </div>
+
+      <div class="story-chapter reverse">
+        <div class="story-text">
+          <span class="chapter-num">Chapter 02</span>
+          <h3>The Sacred Art of Dum Pukht & Clay Ember Fire</h3>
+          <p>Our kitchen is built around two ancient anchors: dough-sealed deghs capturing delicate steam for our Awadhi Biryanis, and traditional clay ovens fired with pure charcoal. Our signature Dal Dāwat simmers for 24 continuous hours with churned white butter.</p>
+        </div>
+        <div class="story-media">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" alt="Live Kitchen Tandoor" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-label">Visual Atmosphere</span>
+        <h2 class="section-title">The Dāwat Sanctuary & Celebrations</h2>
+        <p class="section-intro">Experience the warmth, smiles, glowing hearth, and culinary precision through our lens.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Grand Dining Hall" />
+          <div class="gallery-caption">
+            <span>Ambiance</span>
+            <h4>Grand Amber Dining Salon</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80" alt="Happy Guests Toasting" />
+          <div class="gallery-caption">
+            <span>Patrons</span>
+            <h4>Joyous Celebrations & Toasts</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="800°F Clay Tandoor" />
+          <div class="gallery-caption">
+            <span>Hearth</span>
+            <h4>Live 800°F Charcoal Tandoor</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" alt="Royal Dum Biryani" />
+          <div class="gallery-caption">
+            <span>Culinary</span>
+            <h4>Awadhi Saffron Dum Biryani</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt="Butter Chicken" />
+          <div class="gallery-caption">
+            <span>Signature</span>
+            <h4>Old Delhi Murgh Makhani</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" alt="Spices Mortar" />
+          <div class="gallery-caption">
+            <span>Craft</span>
+            <h4>Stone-Ground Spice Mortars</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Indian Delicacies Menu -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-label">Authentic Regional Repertoire</span>
+        <h2 class="section-title">The Imperial Menu</h2>
+        <p class="section-intro">Every dish made with pure ingredients, authentic Indian recipes, and live coal cooking.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="menu-filters">
+        <button class="filter-btn active" onclick="filterMenu('all', this)">All Delicacies</button>
+        <button class="filter-btn" onclick="filterMenu('starters', this)">Starters</button>
+        <button class="filter-btn" onclick="filterMenu('tandoor', this)">Live Tandoor</button>
+        <button class="filter-btn" onclick="filterMenu('curries', this)">Royal Curries</button>
+        <button class="filter-btn" onclick="filterMenu('biryani', this)">Dum Biryanis</button>
+        <button class="filter-btn" onclick="filterMenu('breads', this)">Artisan Breads</button>
+        <button class="filter-btn" onclick="filterMenu('desserts', this)">Royal Sweets</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-title">Dāwat</span>
+        <p class="footer-desc">Royal Indian gastronomy celebrating centuries of Awadhi, Mughlai, and clay-tandoor heritage. Hand-ground spices, zero compromises.</p>
+        <p class="fssai-tag">🛡️ FSSAI License #10021011000492</p>
+      </div>
+
+      <div>
+        <h4>Service Hours</h4>
+        <p><strong>Open Daily:</strong> 12:00 PM – 12:00 AM</p>
+        <p><strong>Last Seating:</strong> 11:00 PM</p>
+        <p class="gold-text">Open Daily Monday – Sunday</p>
+      </div>
+
+      <div>
+        <h4>Address & Valet</h4>
+        <p>Heritage Square, 14 Park Royal Avenue</p>
+        <p>Connaught Enclave, Central</p>
+        <p class="emerald-text">Complimentary Valet Service</p>
+      </div>
+
+      <div>
+        <h4>Instant Contact</h4>
+        <p>WhatsApp Booking: <strong>+91 6294601364</strong></p>
+        <button class="btn-gold w-100 mt-2" onclick="openBookingModal()">WhatsApp Booking</button>
+        <button class="btn-ghost w-100 mt-2" onclick="openDirectionsModal()">Get Directions</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>© 2026 Dāwat Royal Indian Fine Dining & Live Tandoor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating 1-Tap WhatsApp Button -->
+  <div class="floating-whatsapp" onclick="openBookingModal()" title="Instant WhatsApp Booking (6294601364)">
+    <div class="float-pulse"></div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.22-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm.05 16.5c-1.5 0-2.91-.42-4.13-1.15l-.3-.18-3.08.77.82-2.97-.2-.31A7.95 7.95 0 0 1 4.05 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8.5-8 8.5z"/></svg>
+  </div>
+
+  <!-- Directions Modal -->
+  <div id="directionsModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Find Your Way to Dāwat</h3>
+        <button class="modal-close" onclick="closeDirectionsModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Address:</strong> Heritage Square, 14 Park Royal Avenue, Connaught Enclave</p>
+        <p><strong>Landmark:</strong> Opposite the Imperial Heritage Arch</p>
+        <p><strong>Transit:</strong> 3-min walk from Heritage Central Metro (Exit 3)</p>
+        <p><strong>Parking:</strong> Secure on-site complimentary valet parking</p>
+        <div class="modal-actions">
+          <a href="https://maps.google.com" target="_blank" class="btn-gold w-100">Launch Turn-by-Turn Google Maps</a>
+          <button class="btn-emerald w-100" onclick="requestPinWhatsApp()">Request WhatsApp Location Pin (6294601364)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Booking Modal -->
+  <div id="bookingModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>WhatsApp Table Booking</h3>
+        <button class="modal-close" onclick="closeBookingModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-sub">Direct reservation line with restaurant desk: <strong>6294601364</strong></p>
+        <div class="modal-actions">
+          <a href="https://wa.me/916294601364?text=Hello%20Dāwat%20Restaurant,%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" class="btn-emerald w-100">
+            Open WhatsApp Chat (+91 6294601364)
+          </a>
+          <a href="tel:6294601364" class="btn-outline w-100">
+            Direct Phone Call (6294601364)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
